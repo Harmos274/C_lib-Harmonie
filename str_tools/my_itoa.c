@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static size_t my_strintlen(char *str)
+static size_t my_strintlen(char const *str)
 {
     size_t i = 0;
 
@@ -58,17 +58,24 @@ static size_t my_intlen(int nbr)
     return (i + 1);
 }
 
+static void neg_tester(int *nbr, char **str, size_t *i)
+{
+    if (*nbr < 0) {
+        *nbr = -*nbr;
+        (*str)[*i] = '-';
+        *i += 1;
+    }
+}
+
 char *my_itoa(int nbr)
 {
-    char *str = malloc(sizeof(char) * (my_intlen(nbr) + 2));
+    char *str = malloc(sizeof(char) * (my_intlen(nbr) + 1));
     size_t x = 10;
     size_t i = 0;
     size_t cc = 0;
 
-    if (nbr < 0) {
-        nbr = -nbr;
-        str[i++] = '-';
-    }
+    str[my_intlen(nbr)] = '\0';
+    neg_tester(&nbr, &str, &i);
     if (str == NULL)
         return (NULL);
     while ((cc = (size_t)nbr % x) != (size_t)nbr) {

@@ -24,3 +24,11 @@ Test(my_str_rewrite, simple_test_but_n_lower_than_strlen)
     my_str_rewrite(&str, "lolilo", 3);
     cr_assert_str_eq(str, "lolcdefghi");
 }
+
+Test(my_str_rewrite, simple_test_but_n_highter_than_strlen)
+{
+    char *str = my_strdup("abcdefghi");
+
+    my_str_rewrite(&str, "lol", 0);
+    cr_assert_str_eq(str, "abcdefghi");
+}

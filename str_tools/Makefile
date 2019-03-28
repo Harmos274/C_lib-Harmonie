@@ -33,7 +33,7 @@ SRC_TESTS = critest_str_to_wordarr.c \
 OBJ_FILES = $(SRC_FILES:.c=.o)
 OBJ_TESTS = $(addprefix $(TEST_DIR), $(SRC_TESTS:.c=.o))
 
-CFLAGS = -W -Wextra -Werror
+override CFLAGS = -W -Wextra -Werror
 LDFLAGS = -lcriterion
 
 $(NAME) : $(OBJ_TESTS) $(OBJ_FILES)
