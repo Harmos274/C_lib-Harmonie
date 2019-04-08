@@ -7,30 +7,19 @@
 
 CC = gcc
 
-NAME = test_strtools
+NAME = test_chlist_tools
 
 TEST_DIR = ./tests/
 
-SRC_FILES = clean_str.c \
-			my_getnbr.c \
-			my_itoa.c \
-			my_put_nbr.c \
-			my_putstr.c \
-			my_revstr.c \
-			my_strcomp.c \
-			my_strconc.c \
-			my_str_isnum.c \
-			my_str_isalpha.c \
-			my_strlen.c \
-			my_strncpy.c \
-			my_str_to_word_array.c \
-			my_strdup.c
+SRC_FILES = create_chained_list.c \
+			print_chained_list.c \
+			supr_chained_list.c \
+			../str_tools/my_putstr.c \
+			../str_tools/my_strdup.c \
+			../str_tools/my_strlen.c
 
-SRC_TESTS = critest_str_to_wordarr.c \
-			critest_strconc.c \
-			critest_atoi_itoa.c \
-			critest_strncpy.c \
-			critest_is_alphanum.c
+SRC_TESTS = cirtest_create_chained_list.c \
+			critest_print_chained_list.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 OBJ_TESTS = $(addprefix $(TEST_DIR), $(SRC_TESTS:.c=.o))

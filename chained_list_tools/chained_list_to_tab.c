@@ -78,13 +78,3 @@ char **make_map(save_list_t *saved_map)
     map[i] = saved_map->first->line;
     return (map);
 }
-
-char **mapper(void)
-{
-    save_list_t *saved_map = make_chained_map();
-    char **map = make_map(saved_map);
-
-    test_map(&map);
-    display(map);
-    return (map);
-}
