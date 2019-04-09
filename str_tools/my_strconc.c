@@ -17,28 +17,30 @@ static char *my_str_cfill(size_t size)
         return (NULL);
     while (i != size) {
         str[i] = '\0';
-        i++;
+        ++i;
     }
     return (str);
 }
 
-char *my_strconc(char *left, char *env_line)
+char *my_strconc(char *left, char *right)
 {
     char *str = my_str_cfill(sizeof(char) *
-    (my_strlen(left) + my_strlen(env_line) + 1));
+    (my_strlen(left) + my_strlen(right) + 1));
     size_t i = 0;
     size_t k = 0;
 
-    if (str == NULL || (my_strlen(left) == -1 || my_strlen(env_line) == -1))
+    if (str == NULL || (my_strlen(left) == -1 || my_strlen(right) == -1)) {
+        free(str);
         return (NULL);
+    }
     while (left && left[i] != '\0') {
         str[i] = left[i];
-        i++;
+        ++i;
     }
-    while (env_line && env_line[k] != '\0') {
-        str[i] = env_line[k];
-        i++;
-        k++;
+    while (right && right[k] != '\0') {
+        str[i] = right[k];
+        ++i;
+        ++k;
     }
     return (str);
 }

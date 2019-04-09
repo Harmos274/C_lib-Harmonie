@@ -24,9 +24,11 @@ SRC_FILES = clean_str.c \
 			my_strlen.c \
 			my_strncpy.c \
 			my_str_to_word_array.c \
+			my_str_split.c \
 			my_strdup.c
 
 SRC_TESTS = critest_str_to_wordarr.c \
+			critest_str_split.c \
 			critest_strconc.c \
 			critest_atoi_itoa.c \
 			critest_strncpy.c \

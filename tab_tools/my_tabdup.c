@@ -16,7 +16,7 @@ char **my_tabdup(char **tab)
     size_t i = 0;
 
     if (!tabduped || !tab) {
-        nullify_from((void **)tabduped, 0, 1);
+        nullify_from(tabduped, 0, 1);
         free(tabduped);
         return (NULL);
     }

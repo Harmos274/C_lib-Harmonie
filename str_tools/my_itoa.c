@@ -9,33 +9,20 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static size_t my_strintlen(char const *str)
+static char *my_revnbr(char *str, size_t size)
 {
-    size_t i = 0;
-
-    while (str && (str[i] != '\0')) {
-        ++i;
-    }
-    return (i);
-}
-
-static char *my_revnbr(char *str)
-{
-    size_t i = my_strintlen(str);
     size_t e = 0;
-    char *revstr = malloc(sizeof(char) * (i + 1));
+    char *revstr = malloc(sizeof(char) * (size + 1));
     size_t limit = 0;
 
     if (str[0] == '-') {
         revstr[e++] = '-';
         limit = 1;
     }
-    if (revstr == NULL)
-        return (NULL);
-    while (i != limit) {
-        revstr[e] = str[i - 1];
+    while (size != limit) {
+        revstr[e] = str[size - 1];
         ++e;
-        --i;
+        --size;
     }
     revstr[e] = '\0';
     free(str);
@@ -69,15 +56,16 @@ static void neg_tester(int *nbr, char **str, size_t *i)
 
 char *my_itoa(int nbr)
 {
-    char *str = malloc(sizeof(char) * (my_intlen(nbr) + 1));
+    size_t int_len = my_intlen(nbr);
+    char *str = malloc(sizeof(char) * (int_len + 1));
     size_t x = 10;
     size_t i = 0;
     size_t cc = 0;
 
-    str[my_intlen(nbr)] = '\0';
-    neg_tester(&nbr, &str, &i);
     if (str == NULL)
         return (NULL);
+    str[int_len] = '\0';
+    neg_tester(&nbr, &str, &i);
     while ((cc = (size_t)nbr % x) != (size_t)nbr) {
         if (cc >= 10)
             cc /= x/10;
@@ -86,6 +74,6 @@ char *my_itoa(int nbr)
         ++i;
     }
     str[i] = nbr / (x / 10) + '0';
-    str = my_revnbr(str);
+    str = my_revnbr(str, int_len);
     return (str);
 }

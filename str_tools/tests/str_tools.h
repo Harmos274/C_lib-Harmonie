@@ -28,5 +28,6 @@ ssize_t my_strlen(char const *str);
 void my_str_rewrite(char **source, char *rew, size_t len);
 void my_strncpy(char *dest, char *src, size_t n);
 char *my_strdup(char const *str);
+char **my_str_split(char *str, char c);
 
-#endif /*STR_TOOLS_H_*/
+#endif /*!STR_TOOLS_H_*/

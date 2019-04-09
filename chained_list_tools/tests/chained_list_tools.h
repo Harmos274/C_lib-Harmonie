@@ -25,5 +25,6 @@
     int add_last_chain(save_list_t *s_list, char *str);
     save_list_t *create_saved_list(void);
     void display_chained_list(save_list_t *s_list, char *delim);
+    int supr_save_list(save_list_t **s_list);
 
 #endif /* !CHAINED_LIST_TOOLS_H */

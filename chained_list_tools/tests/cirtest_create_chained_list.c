@@ -45,3 +45,16 @@ Test(add_last_chain, simple_test, .init = redirect_all_std)
     my_putstr(s_list->list->str);
     cr_assert_stdout_eq_str("lol");
 }
+
+Test(supr_list, simple_test)
+{
+    save_list_t *s_list = create_saved_list();
+
+    cr_assert(s_list);
+    cr_assert_eq(add_last_chain(s_list, "1"), 0);
+    cr_assert_eq(add_last_chain(s_list, "2"), 0);
+    cr_assert_eq(add_last_chain(s_list, "3"), 0);
+    cr_assert_eq(add_last_chain(s_list, "4"), 0);
+    cr_assert_eq(supr_save_list(&s_list), 0);
+    cr_assert(!s_list);
+}

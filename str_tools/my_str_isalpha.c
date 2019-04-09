@@ -7,7 +7,7 @@
 
 int my_char_isalpha(char c)
 {
-    if ((c >= 'a' && c <= 'z') || (c>= 'A' && c <= 'Z'))
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
         return (1);
     return (0);
 }
@@ -18,7 +18,7 @@ int my_str_isalpha(char const *str)
 
     while (str[e] != '\0') {
         if (my_char_isalpha(str[e]) == 1)
-            e++;
+            ++e;
         else
             return (0);
     }

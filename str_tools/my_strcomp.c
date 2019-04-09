@@ -17,7 +17,7 @@ int my_strcomp(char *source, char *compared)
     while (source && source[i] != '\0') {
         if (source[i] != compared[i])
             return (0);
-        i++;
+        ++i;
     }
     return (1);
 }

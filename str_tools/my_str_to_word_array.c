@@ -17,7 +17,7 @@ static char *my_str_fill(size_t size)
         return (NULL);
     while (i != size) {
         str[i] = '\0';
-        i++;
+        ++i;
     }
     return (str);
 }
@@ -58,9 +58,9 @@ char **my_str_to_word_array(char *str, char d, int prefix)
             wordtab[y] = my_str_fill(sizeof(char) * (len + 1));
             my_strncpy(wordtab[y], &str[e - len + 1], len);
             len = 0;
-            y++;
+            ++y;
         }
-        e++;
+        ++e;
     }
     wordtab[y] = NULL;
     return (wordtab);

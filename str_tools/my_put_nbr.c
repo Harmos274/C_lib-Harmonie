@@ -12,7 +12,7 @@ static int my_istrlen(char const *src)
     int i = 0;
 
     while (src[i++] != '\0')
-        i++;
+        ++i;
     return (i);
 }
 

@@ -18,7 +18,7 @@ int my_str_isnum(char const *str)
 
     while (str[e] != '\0') {
         if (my_char_isnum(str[e]) == 1)
-            e++;
+            ++e;
         else
             return (0);
     }

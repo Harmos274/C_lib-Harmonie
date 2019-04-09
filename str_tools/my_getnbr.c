@@ -29,16 +29,16 @@ int my_getnbr(char const *str)
     int nb = 0;
     int p = 0;
 
-    while (str &&str[i] != '\0') {
+    while (str && str[i] != '\0') {
         if (str[i] == '-')
-            n++;
+            ++n;
         if (my_char_isnum(str[i]) == 1) {
             nb = (nb * 10 + (str[i] - '0'));
-            p++;
+            ++p;
             if (my_char_isnum(str[i + 1]) == 0)
                 return (nb * my_pow(-1, n));
         }
-        i++;
+        ++i;
     }
     return (0);
 }
