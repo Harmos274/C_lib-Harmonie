@@ -36,5 +36,5 @@ Test(display_chained_list, simple_test, .init = redirect_all_std)
 
     cr_assert(s_list);
     display_chained_list(s_list, " -> ");
-    cr_assert_stdout_eq_str("lal -> lol");
+    cr_assert_stdout_eq_str("lal -> lol -> ");
 }

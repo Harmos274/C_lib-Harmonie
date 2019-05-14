@@ -15,7 +15,7 @@ void display_chained_list(save_list_t *s_list, char *delim)
 {
     save_list_t *discover = s_list;
 
-    while (discover && discover->list && discover->list->next != NULL) {
+    while (discover && discover->list != NULL) {
         my_putstr(discover->list->str);
         my_putstr(delim);
         discover->list = discover->list->next;
