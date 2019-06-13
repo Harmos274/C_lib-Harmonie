@@ -38,7 +38,7 @@ WINDOW *create_sub_window(WINDOW *origin, window_prop_t w_prop, char *border)
         w_prop.start_x);
     if (!border)
         box(new_win, ACS_VLINE, ACS_HLINE);
-    else if (my_strlen(border) >= 8){
+    else if (my_strlen(border) >= 8) {
         wborder(new_win, border[0], border[1], border[2], border[3],
             border[4], border[5], border[6], border[7]);
     }

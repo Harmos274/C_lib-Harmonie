@@ -8,9 +8,10 @@
 #include <stddef.h>
 #include <unistd.h>
 
-ssize_t my_tablen(char **tab)
+ssize_t my_tablen(void *tabptr)
 {
     size_t i = 0;
+    void **tab = (void **)tabptr;
 
     if (!tab) {
         return (-1);
