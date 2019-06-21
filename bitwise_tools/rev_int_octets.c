@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2019
-** corewar
+** bitwise tools
 ** File description:
-** Contains functions used to handle instructions arguments
+** Contains functions used to rev bytes or bits
 */
 
 #include <unistd.h>
@@ -21,7 +21,7 @@ size_t reverse_uint_bits(size_t num)
        --count;
     }
     reverse_num <<= count;
-    return reverse_num;
+    return (reverse_num);
 }
 
 void print_bits(size_t const size, void const * const ptr)
@@ -31,9 +31,9 @@ void print_bits(size_t const size, void const * const ptr)
     int i = 0;
     int j = 0;
 
-    for (i=size-1;i>=0;i--)
+    for (i = size - 1; i >= 0; i--)
     {
-        for (j=7;j>=0;j--)
+        for (j = 7; j >= 0; j--)
         {
             byte = (b[i] >> j) & 1;
             write(1, &byte, sizeof(unsigned char));

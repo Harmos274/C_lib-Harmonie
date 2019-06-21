@@ -13,21 +13,21 @@
 
 Test(my_getnumber, simple_test_pos_number)
 {
-    int str = my_getnbr("1234");
+    int str = my_atoi("1234");
 
     cr_assert_eq(str, 1234);
 }
 
 Test(my_getnumber, simple_test_neg_number)
 {
-    int str = my_getnbr("-1234");
+    int str = my_atoi("-1234");
 
     cr_assert_eq(str, -1234);
 }
 
 Test(my_getnumber, NULL_string_test)
 {
-    int str = my_getnbr(NULL);
+    int str = my_atoi(NULL);
 
     cr_assert_eq(str, 0);
 }

@@ -8,7 +8,7 @@
 #include "./tests/str_tools.h"
 #include <unistd.h>
 
-void my_putstr(char *str)
+void my_putstr(char const *str)
 {
     if (!str)
         return ;

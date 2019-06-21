@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** miishell
+** C lib str tools
 ** File description:
 ** my_strcomp
 */

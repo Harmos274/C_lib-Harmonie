@@ -12,7 +12,7 @@ NAME = test_strtools
 TEST_DIR = ./tests/
 
 SRC_FILES = clean_str.c \
-			my_getnbr.c \
+			my_atoi.c \
 			my_itoa.c \
 			my_put_nbr.c \
 			my_putstr.c \

@@ -22,7 +22,7 @@ static int my_pow(int nb, int p)
     return (r);
 }
 
-int my_getnbr(char const *str)
+int my_atoi(char const *str)
 {
     int i = 0;
     int n = 0;

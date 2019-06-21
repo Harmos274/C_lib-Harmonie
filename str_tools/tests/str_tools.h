@@ -12,10 +12,10 @@
 #include <unistd.h>
 
 void clean_str(char *str);
-int my_getnbr(char const *str);
+int my_atoi(char const *str);
 char *my_itoa(int nbr);
 void my_put_base_nbr(int nb, char *base);
-void my_putstr(char *str);
+void my_putstr(char const *str);
 char *my_revstr(char *str);
 int my_char_isnum(char c);
 int my_char_isalpha(char c);
